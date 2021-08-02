@@ -41,7 +41,7 @@ def transform_categorical_feature(
     return new_df
 
 # please, run a script from API subfolder 
-df = pd.read_csv('data/Brussels-price-predictions.csv')
+df = pd.read_csv('API/data/Brussels-price-predictions.csv')
 df = df.drop(["predicted_price"], axis=1)
 ndf = transform_categorical_feature(df, "subtype", "is_subtype_")
 ndf = transform_categorical_feature(
@@ -49,7 +49,7 @@ ndf = transform_categorical_feature(
     )
 ndf = transform_categorical_feature(ndf, "location", "zipcode_")
 
-model = joblib.load('model/random_forest_BXL.joblib')
+model = joblib.load('API/model/random_forest_BXL.joblib')
 y = ndf.price.to_numpy().reshape(-1,1)
 ndf = ndf.drop(["price"], axis=1)
 x = ndf.to_numpy()
@@ -75,13 +75,13 @@ def prediction_get_return():
     if args == {}:
         return jsonify("You didn't provide any JSON data. Please, check if the submitted form is not empty")
     else: return jsonify(args)
-
+"""
+# END of checking part
 
 @app.route('/', methods=['GET'])
 def response_root():
     return jsonify('alive')
-"""
-# END of checking part
+
 
 # secret route
 @app.route('/*', methods=['GET'])
