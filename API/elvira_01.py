@@ -43,6 +43,11 @@ def transform_categorical_feature(
 # please, run a script from API subfolder 
 df = pd.read_csv('data/Brussels-price-predictions.csv')
 df = df.drop(["predicted_price"], axis=1)
+ndf = transform_categorical_feature(df, "subtype", "is_subtype_")
+ndf = transform_categorical_feature(
+        ndf, "building_condition", "is_building_condition_"
+    )
+ndf = transform_categorical_feature(ndf, "location", "zipcode_")
 
 model = joblib.load('model/random_forest_BXL.joblib')
 y = ndf.price.to_numpy().reshape(-1,1)
