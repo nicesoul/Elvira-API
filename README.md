@@ -4,9 +4,11 @@ A web-based application to get prediction prizes for a Belgian real estate marke
 
 ## The Mission
 
-The real estate company "ImmoEliza" is really happy about our regression model. Now they would like us (and me) to create an API to let their web developers build a website around it.
+The real estate company "ImmoEliza" is really happy about our regression model. Now they would like us (and me) to create an API to let their web developers build a website around it. 
 
 ## Instuctions
+
+API is deployed as a containerized application at heroku => [ElviraAPI](https://elviraapi.herokuapp.com/)
 
 Currently, this repo consists 3 folders:
 - API     = all the code related to API itself.
@@ -15,6 +17,8 @@ Currently, this repo consists 3 folders:
 
 ## Contact
 
-In case of any question, here is my contact [page](https://nicesoul.me/contact)
+In case of any question, please, refer to [documentation](https://nicesoul.github.io/Elvira-API/)
+
+Here is my contact [page](https://nicesoul.me/contact)
 
 If you want to check out other variations of this API, built by my groupmates, please, let me know - I will redirect you to the best ones.
