@@ -65,7 +65,7 @@ def prediction_post_return():
     params = request.json
     if params == None:
         return jsonify("You didn't provide any JSON data. Please, check if the submitted form is not empty")
-    else: return jsonify(params)
+    else: return jsonify("DISCLAIMER: API is working, but not yet returning a predicted prise. Please, let me finish it today 2 August 2021. I'll get back to you as soon as it's ready, my dear WebDev friend. Below is your JSON payload:", params)
 
 # just for checking API responses 
 """
@@ -95,8 +95,8 @@ def page_not_found(e):
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('404.html')
-    return jsonify('Page not found (404). Click here to return to the main page or go to Elvira Github repo for documentation.')
+    #return render_template('404.html')
+    return jsonify('Page not found (404). Implemented endpoints are: https://elviraapi.herokuapp.com/ and https://elviraapi.herokuapp.com/predict    You may wanna check https://nicesoul.github.io/Elvira-API/ for documentation.')
 
 @app.errorhandler(405)
 def page_not_found(e):
