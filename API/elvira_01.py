@@ -90,7 +90,7 @@ def response_star():
 
 # ERRORs handling part
 @app.errorhandler(400)
-def page_not_found(e):
+def bad_request(e):
     return jsonify('Bad request (400). It seems that your JSON is broken, did you forget to put a quotation mark or a comma somewhere? Maybe :)')
 
 @app.errorhandler(404)
@@ -99,11 +99,11 @@ def page_not_found(e):
     return jsonify('Page not found (404). Implemented endpoints are: https://elviraapi.herokuapp.com/ and https://elviraapi.herokuapp.com/predict    You may wanna check https://nicesoul.github.io/Elvira-API/ for documentation.')
 
 @app.errorhandler(405)
-def page_not_found(e):
+def method_not_allowed(e):
     return jsonify('The method is not allowed for the requested URL (405). It means that you are probably doing a POST request to the endpoint, which receives only GET requests or vice versa')
 
 @app.errorhandler(500)
-def page_not_found(e):
+def internal_server_error(e):
     return jsonify('Internal server error (500). Usually it means that you have found a bug. So, please, report to me how to reproduce it so I could fix the bug ASAP. Email to nicesoul.beyourself@gmail.com or check my other contacts here https://nicesoul.me/contact ')
 
 # main entry part
